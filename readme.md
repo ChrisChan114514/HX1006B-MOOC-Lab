@@ -54,4 +54,6 @@ BMP2VGAROM - 图片转mif、mem文件工具
 
 旧版HX1006A实验开源网址：https://github.com/eda-lab/FPGA_DevKit_HX1006A
 
+ChrisChan
+
 2025/11/04
