@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Oct 28 14:08:21 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : hdmi_colorbar_top
+Top-level Entity Name : hdmi_colorbar_top
+Family : Cyclone 10 LP
+Total logic elements : 681
+    Total combinational functions : 652
+    Dedicated logic registers : 272
+Total registers : 288
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 98,304
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

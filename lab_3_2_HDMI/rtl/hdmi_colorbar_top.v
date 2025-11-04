@@ -1,0 +1,116 @@
+//****************************************Copyright (c)***********************************//
+//原子哥在线教学平台：www.yuanzige.com
+//技术支持：www.openedv.com
+//淘宝店铺：http://openedv.taobao.com 
+//关注微信公众平台微信号："正点原子"，免费获取ZYNQ & FPGA & STM32 & LINUX资料。
+//版权所有，盗版必究。
+//Copyright(C) 正点原子 2018-2028
+//All rights reserved
+//----------------------------------------------------------------------------------------
+// File name:           hdmi_colorbar_top
+// Last modified Date:  2019/7/1 9:30:00
+// Last Version:        V1.1
+// Descriptions:        HDMI彩条显示实验顶层模块
+//----------------------------------------------------------------------------------------
+// Created by:          正点原子
+// Created date:        2019/7/1 9:30:00
+// Version:             V1.0
+// Descriptions:        The original version
+//
+//----------------------------------------------------------------------------------------
+//****************************************************************************************//
+
+module  hdmi_colorbar_top(
+    input        sys_clk,
+    input        sys_rst_n,
+    
+    output       tmds_clk_p,    // TMDS 时钟通道
+    output       tmds_clk_n,
+    output [2:0] tmds_data_p,   // TMDS 数据通道
+    output [2:0] tmds_data_n
+);
+
+//wire define
+wire          pixel_clk;
+wire          pixel_clk_5x;
+wire          clk_locked;
+
+wire  [10:0]  pixel_xpos_w;
+wire  [10:0]  pixel_ypos_w;
+wire  [23:0]  pixel_data_w;
+
+wire          video_hs;
+wire          video_vs;
+wire          video_de;
+wire  [23:0]  video_rgb;
+
+//ROM相关信号
+wire  [14:0]  rom_addr;
+wire  [5:0]   rom_data;
+
+//*****************************************************
+//**                    main code
+//*****************************************************
+
+//例化PLL IP核
+pll_clk  u_pll_clk(
+    .areset    (~sys_rst_n),
+    .inclk0    (sys_clk),
+    .c0        (pixel_clk),      //像素时钟
+    .c1        (pixel_clk_5x),   //5倍像素时钟
+    .locked    (clk_locked)
+);
+
+//例化ROM IP核
+rom_bmp u_rom_bmp(
+    .address   (rom_addr),
+    .clock     (pixel_clk),
+    .q         (rom_data)
+);
+
+//例化视频显示驱动模块
+video_driver u_video_driver(
+    .pixel_clk      (pixel_clk),
+    .sys_rst_n      (sys_rst_n & clk_locked),
+
+    .video_hs       (video_hs),
+    .video_vs       (video_vs),
+    .video_de       (video_de),
+    .video_rgb      (video_rgb),
+    .data_req       (),
+    
+    .pixel_xpos     (pixel_xpos_w),
+    .pixel_ypos     (pixel_ypos_w),
+    .pixel_data     (pixel_data_w)
+    );
+
+//例化视频显示模块
+video_display  u_video_display(
+    .pixel_clk      (pixel_clk),
+    .sys_rst_n      (sys_rst_n & clk_locked),
+
+    .pixel_xpos     (pixel_xpos_w),
+    .pixel_ypos     (pixel_ypos_w),
+    .rom_data       (rom_data),
+    .rom_addr       (rom_addr),
+    .pixel_data     (pixel_data_w)
+    );
+
+//例化HDMI驱动模块
+dvi_transmitter_top u_rgb2dvi_0(
+    .pclk           (pixel_clk),
+    .pclk_x5        (pixel_clk_5x),
+    .reset_n        (sys_rst_n & clk_locked),
+                
+    .video_din      (video_rgb),
+    .video_hsync    (video_hs), 
+    .video_vsync    (video_vs),
+    .video_de       (video_de),
+                
+    .tmds_clk_p     (tmds_clk_p),
+    .tmds_clk_n     (tmds_clk_n),
+    .tmds_data_p    (tmds_data_p),
+    .tmds_data_n    (tmds_data_n)
+    );
+
+endmodule 

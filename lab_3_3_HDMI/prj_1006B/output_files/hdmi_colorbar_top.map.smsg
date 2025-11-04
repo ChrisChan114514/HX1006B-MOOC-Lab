@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at cartoon_ctr.v(19): always construct contains both blocking and non-blocking assignments File: C:/Users/15267/Desktop/FPGAdesktop/AssiantantFPGA/ExampleUpgrade/HX1006A_OldLab/lab_3_3_HDMI_ing/rtl/cartoon_ctr.v Line: 19

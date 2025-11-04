@@ -1,0 +1,1056 @@
+|hdmi_colorbar_top
+sys_clk => sys_clk.IN1
+sys_rst_n => comb.IN1
+sys_rst_n => comb.IN1
+sys_rst_n => comb.IN1
+sys_rst_n => _.IN1
+tmds_clk_p << dvi_transmitter_top:u_rgb2dvi_0.tmds_clk_p
+tmds_clk_n << dvi_transmitter_top:u_rgb2dvi_0.tmds_clk_n
+tmds_data_p[0] << dvi_transmitter_top:u_rgb2dvi_0.tmds_data_p
+tmds_data_p[1] << dvi_transmitter_top:u_rgb2dvi_0.tmds_data_p
+tmds_data_p[2] << dvi_transmitter_top:u_rgb2dvi_0.tmds_data_p
+tmds_data_n[0] << dvi_transmitter_top:u_rgb2dvi_0.tmds_data_n
+tmds_data_n[1] << dvi_transmitter_top:u_rgb2dvi_0.tmds_data_n
+tmds_data_n[2] << dvi_transmitter_top:u_rgb2dvi_0.tmds_data_n
+
+
+|hdmi_colorbar_top|pll_clk:u_pll_clk
+areset => areset.IN1
+inclk0 => sub_wire1[0].IN1
+c0 <= altpll:altpll_component.clk
+c1 <= altpll:altpll_component.clk
+locked <= altpll:altpll_component.locked
+
+
+|hdmi_colorbar_top|pll_clk:u_pll_clk|altpll:altpll_component
+inclk[0] => pll_clk_altpll:auto_generated.inclk[0]
+inclk[1] => pll_clk_altpll:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => pll_clk_altpll:auto_generated.areset
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
+clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= pll_clk_altpll:auto_generated.locked
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= <GND>
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|hdmi_colorbar_top|pll_clk:u_pll_clk|altpll:altpll_component|pll_clk_altpll:auto_generated
+areset => pll_lock_sync.ACLR
+areset => pll1.ARESET
+clk[0] <= pll1.CLK
+clk[1] <= pll1.CLK1
+clk[2] <= pll1.CLK2
+clk[3] <= pll1.CLK3
+clk[4] <= pll1.CLK4
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|video_driver:u_video_driver
+pixel_clk => cnt_v[0].CLK
+pixel_clk => cnt_v[1].CLK
+pixel_clk => cnt_v[2].CLK
+pixel_clk => cnt_v[3].CLK
+pixel_clk => cnt_v[4].CLK
+pixel_clk => cnt_v[5].CLK
+pixel_clk => cnt_v[6].CLK
+pixel_clk => cnt_v[7].CLK
+pixel_clk => cnt_v[8].CLK
+pixel_clk => cnt_v[9].CLK
+pixel_clk => cnt_v[10].CLK
+pixel_clk => cnt_v[11].CLK
+pixel_clk => cnt_h[0].CLK
+pixel_clk => cnt_h[1].CLK
+pixel_clk => cnt_h[2].CLK
+pixel_clk => cnt_h[3].CLK
+pixel_clk => cnt_h[4].CLK
+pixel_clk => cnt_h[5].CLK
+pixel_clk => cnt_h[6].CLK
+pixel_clk => cnt_h[7].CLK
+pixel_clk => cnt_h[8].CLK
+pixel_clk => cnt_h[9].CLK
+pixel_clk => cnt_h[10].CLK
+pixel_clk => cnt_h[11].CLK
+pixel_clk => pixel_ypos[0]~reg0.CLK
+pixel_clk => pixel_ypos[1]~reg0.CLK
+pixel_clk => pixel_ypos[2]~reg0.CLK
+pixel_clk => pixel_ypos[3]~reg0.CLK
+pixel_clk => pixel_ypos[4]~reg0.CLK
+pixel_clk => pixel_ypos[5]~reg0.CLK
+pixel_clk => pixel_ypos[6]~reg0.CLK
+pixel_clk => pixel_ypos[7]~reg0.CLK
+pixel_clk => pixel_ypos[8]~reg0.CLK
+pixel_clk => pixel_ypos[9]~reg0.CLK
+pixel_clk => pixel_ypos[10]~reg0.CLK
+pixel_clk => pixel_xpos[0]~reg0.CLK
+pixel_clk => pixel_xpos[1]~reg0.CLK
+pixel_clk => pixel_xpos[2]~reg0.CLK
+pixel_clk => pixel_xpos[3]~reg0.CLK
+pixel_clk => pixel_xpos[4]~reg0.CLK
+pixel_clk => pixel_xpos[5]~reg0.CLK
+pixel_clk => pixel_xpos[6]~reg0.CLK
+pixel_clk => pixel_xpos[7]~reg0.CLK
+pixel_clk => pixel_xpos[8]~reg0.CLK
+pixel_clk => pixel_xpos[9]~reg0.CLK
+pixel_clk => pixel_xpos[10]~reg0.CLK
+pixel_clk => data_req~reg0.CLK
+pixel_clk => video_en.CLK
+sys_rst_n => pixel_xpos[0]~reg0.ACLR
+sys_rst_n => pixel_xpos[1]~reg0.ACLR
+sys_rst_n => pixel_xpos[2]~reg0.ACLR
+sys_rst_n => pixel_xpos[3]~reg0.ACLR
+sys_rst_n => pixel_xpos[4]~reg0.ACLR
+sys_rst_n => pixel_xpos[5]~reg0.ACLR
+sys_rst_n => pixel_xpos[6]~reg0.ACLR
+sys_rst_n => pixel_xpos[7]~reg0.ACLR
+sys_rst_n => pixel_xpos[8]~reg0.ACLR
+sys_rst_n => pixel_xpos[9]~reg0.ACLR
+sys_rst_n => pixel_xpos[10]~reg0.ACLR
+sys_rst_n => video_en.ACLR
+sys_rst_n => data_req~reg0.ACLR
+sys_rst_n => pixel_ypos[0]~reg0.ACLR
+sys_rst_n => pixel_ypos[1]~reg0.ACLR
+sys_rst_n => pixel_ypos[2]~reg0.ACLR
+sys_rst_n => pixel_ypos[3]~reg0.ACLR
+sys_rst_n => pixel_ypos[4]~reg0.ACLR
+sys_rst_n => pixel_ypos[5]~reg0.ACLR
+sys_rst_n => pixel_ypos[6]~reg0.ACLR
+sys_rst_n => pixel_ypos[7]~reg0.ACLR
+sys_rst_n => pixel_ypos[8]~reg0.ACLR
+sys_rst_n => pixel_ypos[9]~reg0.ACLR
+sys_rst_n => pixel_ypos[10]~reg0.ACLR
+sys_rst_n => cnt_h[0].ACLR
+sys_rst_n => cnt_h[1].ACLR
+sys_rst_n => cnt_h[2].ACLR
+sys_rst_n => cnt_h[3].ACLR
+sys_rst_n => cnt_h[4].ACLR
+sys_rst_n => cnt_h[5].ACLR
+sys_rst_n => cnt_h[6].ACLR
+sys_rst_n => cnt_h[7].ACLR
+sys_rst_n => cnt_h[8].ACLR
+sys_rst_n => cnt_h[9].ACLR
+sys_rst_n => cnt_h[10].ACLR
+sys_rst_n => cnt_h[11].ACLR
+sys_rst_n => cnt_v[0].ACLR
+sys_rst_n => cnt_v[1].ACLR
+sys_rst_n => cnt_v[2].ACLR
+sys_rst_n => cnt_v[3].ACLR
+sys_rst_n => cnt_v[4].ACLR
+sys_rst_n => cnt_v[5].ACLR
+sys_rst_n => cnt_v[6].ACLR
+sys_rst_n => cnt_v[7].ACLR
+sys_rst_n => cnt_v[8].ACLR
+sys_rst_n => cnt_v[9].ACLR
+sys_rst_n => cnt_v[10].ACLR
+sys_rst_n => cnt_v[11].ACLR
+video_hs <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+video_vs <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+video_de <= video_en.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[0] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[1] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[2] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[3] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[4] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[5] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[6] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[7] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[8] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[9] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[10] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[11] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[12] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[13] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[14] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[15] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[16] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[17] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[18] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[19] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[20] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[21] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[22] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+video_rgb[23] <= video_rgb.DB_MAX_OUTPUT_PORT_TYPE
+data_req <= data_req~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[0] => video_rgb.DATAB
+pixel_data[1] => video_rgb.DATAB
+pixel_data[2] => video_rgb.DATAB
+pixel_data[3] => video_rgb.DATAB
+pixel_data[4] => video_rgb.DATAB
+pixel_data[5] => video_rgb.DATAB
+pixel_data[6] => video_rgb.DATAB
+pixel_data[7] => video_rgb.DATAB
+pixel_data[8] => video_rgb.DATAB
+pixel_data[9] => video_rgb.DATAB
+pixel_data[10] => video_rgb.DATAB
+pixel_data[11] => video_rgb.DATAB
+pixel_data[12] => video_rgb.DATAB
+pixel_data[13] => video_rgb.DATAB
+pixel_data[14] => video_rgb.DATAB
+pixel_data[15] => video_rgb.DATAB
+pixel_data[16] => video_rgb.DATAB
+pixel_data[17] => video_rgb.DATAB
+pixel_data[18] => video_rgb.DATAB
+pixel_data[19] => video_rgb.DATAB
+pixel_data[20] => video_rgb.DATAB
+pixel_data[21] => video_rgb.DATAB
+pixel_data[22] => video_rgb.DATAB
+pixel_data[23] => video_rgb.DATAB
+pixel_xpos[0] <= pixel_xpos[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[1] <= pixel_xpos[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[2] <= pixel_xpos[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[3] <= pixel_xpos[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[4] <= pixel_xpos[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[5] <= pixel_xpos[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[6] <= pixel_xpos[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[7] <= pixel_xpos[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[8] <= pixel_xpos[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[9] <= pixel_xpos[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_xpos[10] <= pixel_xpos[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[0] <= pixel_ypos[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[1] <= pixel_ypos[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[2] <= pixel_ypos[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[3] <= pixel_ypos[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[4] <= pixel_ypos[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[5] <= pixel_ypos[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[6] <= pixel_ypos[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[7] <= pixel_ypos[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[8] <= pixel_ypos[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[9] <= pixel_ypos[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_ypos[10] <= pixel_ypos[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|video_display:u_video_display
+pixel_clk => pixel_data[0]~reg0.CLK
+pixel_clk => pixel_data[1]~reg0.CLK
+pixel_clk => pixel_data[2]~reg0.CLK
+pixel_clk => pixel_data[3]~reg0.CLK
+pixel_clk => pixel_data[4]~reg0.CLK
+pixel_clk => pixel_data[5]~reg0.CLK
+pixel_clk => pixel_data[6]~reg0.CLK
+pixel_clk => pixel_data[7]~reg0.CLK
+pixel_clk => pixel_data[8]~reg0.CLK
+pixel_clk => pixel_data[9]~reg0.CLK
+pixel_clk => pixel_data[10]~reg0.CLK
+pixel_clk => pixel_data[11]~reg0.CLK
+pixel_clk => pixel_data[12]~reg0.CLK
+pixel_clk => pixel_data[13]~reg0.CLK
+pixel_clk => pixel_data[14]~reg0.CLK
+pixel_clk => pixel_data[15]~reg0.CLK
+pixel_clk => pixel_data[16]~reg0.CLK
+pixel_clk => pixel_data[17]~reg0.CLK
+pixel_clk => pixel_data[18]~reg0.CLK
+pixel_clk => pixel_data[19]~reg0.CLK
+pixel_clk => pixel_data[20]~reg0.CLK
+pixel_clk => pixel_data[21]~reg0.CLK
+pixel_clk => pixel_data[22]~reg0.CLK
+pixel_clk => pixel_data[23]~reg0.CLK
+sys_rst_n => pixel_data.OUTPUTSELECT
+sys_rst_n => pixel_data.OUTPUTSELECT
+sys_rst_n => pixel_data.OUTPUTSELECT
+pixel_xpos[0] => LessThan0.IN22
+pixel_xpos[0] => LessThan1.IN22
+pixel_xpos[0] => LessThan2.IN22
+pixel_xpos[0] => LessThan3.IN22
+pixel_xpos[0] => LessThan4.IN22
+pixel_xpos[0] => LessThan5.IN22
+pixel_xpos[0] => LessThan6.IN22
+pixel_xpos[1] => LessThan0.IN21
+pixel_xpos[1] => LessThan1.IN21
+pixel_xpos[1] => LessThan2.IN21
+pixel_xpos[1] => LessThan3.IN21
+pixel_xpos[1] => LessThan4.IN21
+pixel_xpos[1] => LessThan5.IN21
+pixel_xpos[1] => LessThan6.IN21
+pixel_xpos[2] => LessThan0.IN20
+pixel_xpos[2] => LessThan1.IN20
+pixel_xpos[2] => LessThan2.IN20
+pixel_xpos[2] => LessThan3.IN20
+pixel_xpos[2] => LessThan4.IN20
+pixel_xpos[2] => LessThan5.IN20
+pixel_xpos[2] => LessThan6.IN20
+pixel_xpos[3] => LessThan0.IN19
+pixel_xpos[3] => LessThan1.IN19
+pixel_xpos[3] => LessThan2.IN19
+pixel_xpos[3] => LessThan3.IN19
+pixel_xpos[3] => LessThan4.IN19
+pixel_xpos[3] => LessThan5.IN19
+pixel_xpos[3] => LessThan6.IN19
+pixel_xpos[4] => LessThan0.IN18
+pixel_xpos[4] => LessThan1.IN18
+pixel_xpos[4] => LessThan2.IN18
+pixel_xpos[4] => LessThan3.IN18
+pixel_xpos[4] => LessThan4.IN18
+pixel_xpos[4] => LessThan5.IN18
+pixel_xpos[4] => LessThan6.IN18
+pixel_xpos[5] => LessThan0.IN17
+pixel_xpos[5] => LessThan1.IN17
+pixel_xpos[5] => LessThan2.IN17
+pixel_xpos[5] => LessThan3.IN17
+pixel_xpos[5] => LessThan4.IN17
+pixel_xpos[5] => LessThan5.IN17
+pixel_xpos[5] => LessThan6.IN17
+pixel_xpos[6] => LessThan0.IN16
+pixel_xpos[6] => LessThan1.IN16
+pixel_xpos[6] => LessThan2.IN16
+pixel_xpos[6] => LessThan3.IN16
+pixel_xpos[6] => LessThan4.IN16
+pixel_xpos[6] => LessThan5.IN16
+pixel_xpos[6] => LessThan6.IN16
+pixel_xpos[7] => LessThan0.IN15
+pixel_xpos[7] => LessThan1.IN15
+pixel_xpos[7] => LessThan2.IN15
+pixel_xpos[7] => LessThan3.IN15
+pixel_xpos[7] => LessThan4.IN15
+pixel_xpos[7] => LessThan5.IN15
+pixel_xpos[7] => LessThan6.IN15
+pixel_xpos[8] => LessThan0.IN14
+pixel_xpos[8] => LessThan1.IN14
+pixel_xpos[8] => LessThan2.IN14
+pixel_xpos[8] => LessThan3.IN14
+pixel_xpos[8] => LessThan4.IN14
+pixel_xpos[8] => LessThan5.IN14
+pixel_xpos[8] => LessThan6.IN14
+pixel_xpos[9] => LessThan0.IN13
+pixel_xpos[9] => LessThan1.IN13
+pixel_xpos[9] => LessThan2.IN13
+pixel_xpos[9] => LessThan3.IN13
+pixel_xpos[9] => LessThan4.IN13
+pixel_xpos[9] => LessThan5.IN13
+pixel_xpos[9] => LessThan6.IN13
+pixel_xpos[10] => LessThan0.IN12
+pixel_xpos[10] => LessThan1.IN12
+pixel_xpos[10] => LessThan2.IN12
+pixel_xpos[10] => LessThan3.IN12
+pixel_xpos[10] => LessThan4.IN12
+pixel_xpos[10] => LessThan5.IN12
+pixel_xpos[10] => LessThan6.IN12
+pixel_ypos[0] => ~NO_FANOUT~
+pixel_ypos[1] => ~NO_FANOUT~
+pixel_ypos[2] => ~NO_FANOUT~
+pixel_ypos[3] => ~NO_FANOUT~
+pixel_ypos[4] => ~NO_FANOUT~
+pixel_ypos[5] => ~NO_FANOUT~
+pixel_ypos[6] => ~NO_FANOUT~
+pixel_ypos[7] => ~NO_FANOUT~
+pixel_ypos[8] => ~NO_FANOUT~
+pixel_ypos[9] => ~NO_FANOUT~
+pixel_ypos[10] => ~NO_FANOUT~
+pixel_data[0] <= pixel_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[1] <= pixel_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[2] <= pixel_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[3] <= pixel_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[4] <= pixel_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[5] <= pixel_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[6] <= pixel_data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[7] <= pixel_data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[8] <= pixel_data[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[9] <= pixel_data[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[10] <= pixel_data[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[11] <= pixel_data[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[12] <= pixel_data[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[13] <= pixel_data[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[14] <= pixel_data[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[15] <= pixel_data[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[16] <= pixel_data[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[17] <= pixel_data[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[18] <= pixel_data[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[19] <= pixel_data[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[20] <= pixel_data[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[21] <= pixel_data[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[22] <= pixel_data[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_data[23] <= pixel_data[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0
+pclk => pclk.IN4
+pclk_x5 => pclk_x5.IN4
+reset_n => reset_n.IN1
+video_din[0] => video_din[0].IN1
+video_din[1] => video_din[1].IN1
+video_din[2] => video_din[2].IN1
+video_din[3] => video_din[3].IN1
+video_din[4] => video_din[4].IN1
+video_din[5] => video_din[5].IN1
+video_din[6] => video_din[6].IN1
+video_din[7] => video_din[7].IN1
+video_din[8] => video_din[8].IN1
+video_din[9] => video_din[9].IN1
+video_din[10] => video_din[10].IN1
+video_din[11] => video_din[11].IN1
+video_din[12] => video_din[12].IN1
+video_din[13] => video_din[13].IN1
+video_din[14] => video_din[14].IN1
+video_din[15] => video_din[15].IN1
+video_din[16] => video_din[16].IN1
+video_din[17] => video_din[17].IN1
+video_din[18] => video_din[18].IN1
+video_din[19] => video_din[19].IN1
+video_din[20] => video_din[20].IN1
+video_din[21] => video_din[21].IN1
+video_din[22] => video_din[22].IN1
+video_din[23] => video_din[23].IN1
+video_hsync => video_hsync.IN1
+video_vsync => video_vsync.IN1
+video_de => video_de.IN3
+tmds_clk_p <= serializer_10_to_1:serializer_clk.serial_data_p
+tmds_clk_n <= serializer_10_to_1:serializer_clk.serial_data_n
+tmds_data_p[0] <= serializer_10_to_1:serializer_b.serial_data_p
+tmds_data_p[1] <= serializer_10_to_1:serializer_g.serial_data_p
+tmds_data_p[2] <= serializer_10_to_1:serializer_r.serial_data_p
+tmds_data_n[0] <= serializer_10_to_1:serializer_b.serial_data_n
+tmds_data_n[1] <= serializer_10_to_1:serializer_g.serial_data_n
+tmds_data_n[2] <= serializer_10_to_1:serializer_r.serial_data_n
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|asyn_rst_syn:reset_syn
+clk => reset_2.CLK
+clk => reset_1.CLK
+reset_n => reset_2.PRESET
+reset_n => reset_1.PRESET
+syn_reset <= reset_2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|dvi_encoder:encoder_b
+clkin => cnt[0].CLK
+clkin => cnt[1].CLK
+clkin => cnt[2].CLK
+clkin => cnt[3].CLK
+clkin => cnt[4].CLK
+clkin => dout[0]~reg0.CLK
+clkin => dout[1]~reg0.CLK
+clkin => dout[2]~reg0.CLK
+clkin => dout[3]~reg0.CLK
+clkin => dout[4]~reg0.CLK
+clkin => dout[5]~reg0.CLK
+clkin => dout[6]~reg0.CLK
+clkin => dout[7]~reg0.CLK
+clkin => dout[8]~reg0.CLK
+clkin => dout[9]~reg0.CLK
+clkin => q_m_reg[0].CLK
+clkin => q_m_reg[1].CLK
+clkin => q_m_reg[2].CLK
+clkin => q_m_reg[3].CLK
+clkin => q_m_reg[4].CLK
+clkin => q_m_reg[5].CLK
+clkin => q_m_reg[6].CLK
+clkin => q_m_reg[7].CLK
+clkin => q_m_reg[8].CLK
+clkin => c1_reg.CLK
+clkin => c1_q.CLK
+clkin => c0_reg.CLK
+clkin => c0_q.CLK
+clkin => de_reg.CLK
+clkin => de_q.CLK
+clkin => n0q_m[0].CLK
+clkin => n0q_m[1].CLK
+clkin => n0q_m[2].CLK
+clkin => n0q_m[3].CLK
+clkin => n1q_m[0].CLK
+clkin => n1q_m[1].CLK
+clkin => n1q_m[2].CLK
+clkin => n1q_m[3].CLK
+clkin => din_q[0].CLK
+clkin => din_q[1].CLK
+clkin => din_q[2].CLK
+clkin => din_q[3].CLK
+clkin => din_q[4].CLK
+clkin => din_q[5].CLK
+clkin => din_q[6].CLK
+clkin => din_q[7].CLK
+clkin => n1d[0].CLK
+clkin => n1d[1].CLK
+clkin => n1d[2].CLK
+clkin => n1d[3].CLK
+rstin => cnt[0].ACLR
+rstin => cnt[1].ACLR
+rstin => cnt[2].ACLR
+rstin => cnt[3].ACLR
+rstin => cnt[4].ACLR
+rstin => dout[0]~reg0.ACLR
+rstin => dout[1]~reg0.ACLR
+rstin => dout[2]~reg0.ACLR
+rstin => dout[3]~reg0.ACLR
+rstin => dout[4]~reg0.ACLR
+rstin => dout[5]~reg0.ACLR
+rstin => dout[6]~reg0.ACLR
+rstin => dout[7]~reg0.ACLR
+rstin => dout[8]~reg0.ACLR
+rstin => dout[9]~reg0.ACLR
+din[0] => Add0.IN2
+din[0] => din_q[0].DATAIN
+din[1] => Add0.IN1
+din[1] => din_q[1].DATAIN
+din[2] => Add1.IN4
+din[2] => din_q[2].DATAIN
+din[3] => Add2.IN6
+din[3] => din_q[3].DATAIN
+din[4] => Add3.IN8
+din[4] => din_q[4].DATAIN
+din[5] => Add4.IN8
+din[5] => din_q[5].DATAIN
+din[6] => Add5.IN8
+din[6] => din_q[6].DATAIN
+din[7] => Add6.IN8
+din[7] => din_q[7].DATAIN
+c0 => c0_q.DATAIN
+c1 => c1_q.DATAIN
+de => de_q.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[8] <= dout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[9] <= dout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|dvi_encoder:encoder_g
+clkin => cnt[0].CLK
+clkin => cnt[1].CLK
+clkin => cnt[2].CLK
+clkin => cnt[3].CLK
+clkin => cnt[4].CLK
+clkin => dout[0]~reg0.CLK
+clkin => dout[1]~reg0.CLK
+clkin => dout[2]~reg0.CLK
+clkin => dout[3]~reg0.CLK
+clkin => dout[4]~reg0.CLK
+clkin => dout[5]~reg0.CLK
+clkin => dout[6]~reg0.CLK
+clkin => dout[7]~reg0.CLK
+clkin => dout[8]~reg0.CLK
+clkin => dout[9]~reg0.CLK
+clkin => q_m_reg[0].CLK
+clkin => q_m_reg[1].CLK
+clkin => q_m_reg[2].CLK
+clkin => q_m_reg[3].CLK
+clkin => q_m_reg[4].CLK
+clkin => q_m_reg[5].CLK
+clkin => q_m_reg[6].CLK
+clkin => q_m_reg[7].CLK
+clkin => q_m_reg[8].CLK
+clkin => c1_reg.CLK
+clkin => c1_q.CLK
+clkin => c0_reg.CLK
+clkin => c0_q.CLK
+clkin => de_reg.CLK
+clkin => de_q.CLK
+clkin => n0q_m[0].CLK
+clkin => n0q_m[1].CLK
+clkin => n0q_m[2].CLK
+clkin => n0q_m[3].CLK
+clkin => n1q_m[0].CLK
+clkin => n1q_m[1].CLK
+clkin => n1q_m[2].CLK
+clkin => n1q_m[3].CLK
+clkin => din_q[0].CLK
+clkin => din_q[1].CLK
+clkin => din_q[2].CLK
+clkin => din_q[3].CLK
+clkin => din_q[4].CLK
+clkin => din_q[5].CLK
+clkin => din_q[6].CLK
+clkin => din_q[7].CLK
+clkin => n1d[0].CLK
+clkin => n1d[1].CLK
+clkin => n1d[2].CLK
+clkin => n1d[3].CLK
+rstin => cnt[0].ACLR
+rstin => cnt[1].ACLR
+rstin => cnt[2].ACLR
+rstin => cnt[3].ACLR
+rstin => cnt[4].ACLR
+rstin => dout[0]~reg0.ACLR
+rstin => dout[1]~reg0.ACLR
+rstin => dout[2]~reg0.ACLR
+rstin => dout[3]~reg0.ACLR
+rstin => dout[4]~reg0.ACLR
+rstin => dout[5]~reg0.ACLR
+rstin => dout[6]~reg0.ACLR
+rstin => dout[7]~reg0.ACLR
+rstin => dout[8]~reg0.ACLR
+rstin => dout[9]~reg0.ACLR
+din[0] => Add0.IN2
+din[0] => din_q[0].DATAIN
+din[1] => Add0.IN1
+din[1] => din_q[1].DATAIN
+din[2] => Add1.IN4
+din[2] => din_q[2].DATAIN
+din[3] => Add2.IN6
+din[3] => din_q[3].DATAIN
+din[4] => Add3.IN8
+din[4] => din_q[4].DATAIN
+din[5] => Add4.IN8
+din[5] => din_q[5].DATAIN
+din[6] => Add5.IN8
+din[6] => din_q[6].DATAIN
+din[7] => Add6.IN8
+din[7] => din_q[7].DATAIN
+c0 => c0_q.DATAIN
+c1 => c1_q.DATAIN
+de => de_q.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[8] <= dout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[9] <= dout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|dvi_encoder:encoder_r
+clkin => cnt[0].CLK
+clkin => cnt[1].CLK
+clkin => cnt[2].CLK
+clkin => cnt[3].CLK
+clkin => cnt[4].CLK
+clkin => dout[0]~reg0.CLK
+clkin => dout[1]~reg0.CLK
+clkin => dout[2]~reg0.CLK
+clkin => dout[3]~reg0.CLK
+clkin => dout[4]~reg0.CLK
+clkin => dout[5]~reg0.CLK
+clkin => dout[6]~reg0.CLK
+clkin => dout[7]~reg0.CLK
+clkin => dout[8]~reg0.CLK
+clkin => dout[9]~reg0.CLK
+clkin => q_m_reg[0].CLK
+clkin => q_m_reg[1].CLK
+clkin => q_m_reg[2].CLK
+clkin => q_m_reg[3].CLK
+clkin => q_m_reg[4].CLK
+clkin => q_m_reg[5].CLK
+clkin => q_m_reg[6].CLK
+clkin => q_m_reg[7].CLK
+clkin => q_m_reg[8].CLK
+clkin => c1_reg.CLK
+clkin => c1_q.CLK
+clkin => c0_reg.CLK
+clkin => c0_q.CLK
+clkin => de_reg.CLK
+clkin => de_q.CLK
+clkin => n0q_m[0].CLK
+clkin => n0q_m[1].CLK
+clkin => n0q_m[2].CLK
+clkin => n0q_m[3].CLK
+clkin => n1q_m[0].CLK
+clkin => n1q_m[1].CLK
+clkin => n1q_m[2].CLK
+clkin => n1q_m[3].CLK
+clkin => din_q[0].CLK
+clkin => din_q[1].CLK
+clkin => din_q[2].CLK
+clkin => din_q[3].CLK
+clkin => din_q[4].CLK
+clkin => din_q[5].CLK
+clkin => din_q[6].CLK
+clkin => din_q[7].CLK
+clkin => n1d[0].CLK
+clkin => n1d[1].CLK
+clkin => n1d[2].CLK
+clkin => n1d[3].CLK
+rstin => cnt[0].ACLR
+rstin => cnt[1].ACLR
+rstin => cnt[2].ACLR
+rstin => cnt[3].ACLR
+rstin => cnt[4].ACLR
+rstin => dout[0]~reg0.ACLR
+rstin => dout[1]~reg0.ACLR
+rstin => dout[2]~reg0.ACLR
+rstin => dout[3]~reg0.ACLR
+rstin => dout[4]~reg0.ACLR
+rstin => dout[5]~reg0.ACLR
+rstin => dout[6]~reg0.ACLR
+rstin => dout[7]~reg0.ACLR
+rstin => dout[8]~reg0.ACLR
+rstin => dout[9]~reg0.ACLR
+din[0] => Add0.IN2
+din[0] => din_q[0].DATAIN
+din[1] => Add0.IN1
+din[1] => din_q[1].DATAIN
+din[2] => Add1.IN4
+din[2] => din_q[2].DATAIN
+din[3] => Add2.IN6
+din[3] => din_q[3].DATAIN
+din[4] => Add3.IN8
+din[4] => din_q[4].DATAIN
+din[5] => Add4.IN8
+din[5] => din_q[5].DATAIN
+din[6] => Add5.IN8
+din[6] => din_q[6].DATAIN
+din[7] => Add6.IN8
+din[7] => din_q[7].DATAIN
+c0 => c0_q.DATAIN
+c1 => c1_q.DATAIN
+de => de_q.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[8] <= dout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[9] <= dout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b
+serial_clk_5x => serial_clk_5x.IN1
+paralell_data[0] => datain_rise_shift.DATAB
+paralell_data[1] => datain_fall_shift.DATAB
+paralell_data[2] => datain_rise_shift.DATAB
+paralell_data[3] => datain_fall_shift.DATAB
+paralell_data[4] => datain_rise_shift.DATAB
+paralell_data[5] => datain_fall_shift.DATAB
+paralell_data[6] => datain_rise_shift.DATAB
+paralell_data[7] => datain_fall_shift.DATAB
+paralell_data[8] => datain_rise_shift.DATAB
+paralell_data[9] => datain_fall_shift.DATAB
+serial_data_p <= ddio_out:u_ddio_out_p.dataout[0]
+serial_data_n <= ddio_out:u_ddio_out_n.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b|ddio_out:u_ddio_out_p
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b|ddio_out:u_ddio_out_n
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_b|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g
+serial_clk_5x => serial_clk_5x.IN1
+paralell_data[0] => datain_rise_shift.DATAB
+paralell_data[1] => datain_fall_shift.DATAB
+paralell_data[2] => datain_rise_shift.DATAB
+paralell_data[3] => datain_fall_shift.DATAB
+paralell_data[4] => datain_rise_shift.DATAB
+paralell_data[5] => datain_fall_shift.DATAB
+paralell_data[6] => datain_rise_shift.DATAB
+paralell_data[7] => datain_fall_shift.DATAB
+paralell_data[8] => datain_rise_shift.DATAB
+paralell_data[9] => datain_fall_shift.DATAB
+serial_data_p <= ddio_out:u_ddio_out_p.dataout[0]
+serial_data_n <= ddio_out:u_ddio_out_n.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g|ddio_out:u_ddio_out_p
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g|ddio_out:u_ddio_out_n
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_g|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r
+serial_clk_5x => serial_clk_5x.IN1
+paralell_data[0] => datain_rise_shift.DATAB
+paralell_data[1] => datain_fall_shift.DATAB
+paralell_data[2] => datain_rise_shift.DATAB
+paralell_data[3] => datain_fall_shift.DATAB
+paralell_data[4] => datain_rise_shift.DATAB
+paralell_data[5] => datain_fall_shift.DATAB
+paralell_data[6] => datain_rise_shift.DATAB
+paralell_data[7] => datain_fall_shift.DATAB
+paralell_data[8] => datain_rise_shift.DATAB
+paralell_data[9] => datain_fall_shift.DATAB
+serial_data_p <= ddio_out:u_ddio_out_p.dataout[0]
+serial_data_n <= ddio_out:u_ddio_out_n.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r|ddio_out:u_ddio_out_p
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r|ddio_out:u_ddio_out_n
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_r|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk
+serial_clk_5x => serial_clk_5x.IN1
+paralell_data[0] => datain_rise_shift.DATAB
+paralell_data[1] => datain_fall_shift.DATAB
+paralell_data[2] => datain_rise_shift.DATAB
+paralell_data[3] => datain_fall_shift.DATAB
+paralell_data[4] => datain_rise_shift.DATAB
+paralell_data[5] => datain_fall_shift.DATAB
+paralell_data[6] => datain_rise_shift.DATAB
+paralell_data[7] => datain_fall_shift.DATAB
+paralell_data[8] => datain_rise_shift.DATAB
+paralell_data[9] => datain_fall_shift.DATAB
+serial_data_p <= ddio_out:u_ddio_out_p.dataout[0]
+serial_data_n <= ddio_out:u_ddio_out_n.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk|ddio_out:u_ddio_out_p
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk|ddio_out:u_ddio_out_p|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk|ddio_out:u_ddio_out_n
+datain_h[0] => datain_h[0].IN1
+datain_l[0] => datain_l[0].IN1
+outclock => outclock.IN1
+dataout[0] <= altddio_out:ALTDDIO_OUT_component.dataout
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component
+datain_h[0] => ddio_out_i9j:auto_generated.datain_h[0]
+datain_l[0] => ddio_out_i9j:auto_generated.datain_l[0]
+outclock => ddio_out_i9j:auto_generated.outclock
+outclocken => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+oe => ~NO_FANOUT~
+dataout[0] <> ddio_out_i9j:auto_generated.dataout[0]
+oe_out[0] <= <GND>
+
+
+|hdmi_colorbar_top|dvi_transmitter_top:u_rgb2dvi_0|serializer_10_to_1:serializer_clk|ddio_out:u_ddio_out_n|altddio_out:ALTDDIO_OUT_component|ddio_out_i9j:auto_generated
+datain_h[0] => ddio_outa[0].DATAINHI
+datain_l[0] => ddio_outa[0].DATAINLO
+dataout[0] <= ddio_outa[0].DATAOUT
+outclock => ddio_outa[0].CLKHI
+outclock => ddio_outa[0].CLKLO
+outclock => ddio_outa[0].MUXSEL
+
+
